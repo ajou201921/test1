@@ -70,7 +70,7 @@ public class ChampionTest {
 //        assertThat(3.14, closeTo(3, 0.2)); // 값을 주고, 기본 3에 0.2안에 들어오면 true
     }
 
-    //anything 테스트
+    //anything 테스트 suchan
     @Test
     public void shouldNotErrorGetReference() {
         assertThat(championList.get(3),anything());
@@ -84,14 +84,11 @@ public class ChampionTest {
         assertThat(championList, hasSize(5)); //size가 5인지
     }
 
-    //서폿 챔피언은 타릭이어야 한다라는 조건으로 테스트 코드 작성
+    //미드 챔피언은 카사딘이어야 한다라는 조건으로 테스트 코드 작성 suchan
     @Test
-    public void shouldSupportChampionIsTaric() {
-        Champion supportChamp = new Champion("타릭", "바텀");
-
-//        assertThat("타릭", is(supportChamp.getName()));
-//        assertThat("타릭", is(equalTo(supportChamp.getName())));
-//        assertThat("타릭", equalTo(supportChamp.getName()));
+    public void shouldMidChampionIskasadin() {
+        Champion supportChamp = new Champion("카사딘", "미드");
+        assertThat("카사딘",is(equalTo(supportChamp.getName())));
     }
 
     //hasProperty 활용하여 속성이 포함되어 있는지 테스트
