@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.*;
 
+
 public class UpperCaseCounterTest {
 
     private UpperCaseCounter upperCaseCounter = new UpperCaseCounter();
