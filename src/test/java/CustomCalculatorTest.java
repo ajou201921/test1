@@ -52,6 +52,10 @@ public class CustomCalculatorTest {
     public void divide() {
         customCalculator = new CustomCalculator();
         int result = customCalculator.divide(25,5);
+        //assertThat(result,is(1)); //틀렷다고 나옴 답은 5이기 때문임.
+        //assertThat(result,is(5)); // 답이 5이기 때문에 맞은것,
+        assertTrue(result==5); // 답이 5이기때문에 true임.
+        //assertFalse(result==5); // 답이 5이라서 오류가 뜸 조건이 false가 되어야함.
         /* 이곳에 테스트 코드를 작성하세요. */
         System.out.println("result :: " + result);
     }
