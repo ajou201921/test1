@@ -98,10 +98,10 @@ public class ChampionTest {
     //hasProperty 활용하여 속성이 포함되어 있는지 테스트
     @Test
     public void shouldHasPropertyPosition() {
-//        assertThat(championList.get(0), hasProperty("position"));
-//        assertThat(championList.get(0), hasProperty("name"));
-//        assertThat(championList.get(0), hasProperty("position", equalTo("탑")));
-//        assertThat(championList.get(3), hasProperty("position", equalTo("르블랑")));
+        assertThat(championList.get(0), hasProperty("position"));
+        assertThat(championList.get(0), hasProperty("name"));
+        assertThat(championList.get(2), hasProperty("position", equalTo("미드")));
+        assertThat(championList.get(4), hasProperty("name", equalTo("잔나")));
 
     }
 
