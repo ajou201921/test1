@@ -43,6 +43,7 @@ public class ChampionTest {
     public void notNullCheck() {
         String lck = "LCK";
         assertThat(lck , notNullValue());
+        //suchan
     }
 
     //nullValue 활용한 테스트
@@ -55,13 +56,12 @@ public class ChampionTest {
     //문자열 관련 테스트 anyOf, containsString, endWith
     @Test
     public void testForRelatedString() {
-        String sampleString1 = "Player Focus";
-        String sampleString2 = "Player point";
+        String sampleString1 = "Player suchan";
         String startString = "Player";
-        String endString = "point";
-//        assertThat(sampleString1,is(startWith("Player")));
-//        assertThat(sampleString1, anyOf(startsWith(startString), containsString(endString))); //있는지 없는지를 확인. /
-//        assertThat(sampleString2, is(endsWith(endString)));
+        String endString = "suchan";
+      assertThat(sampleString1, allOf(startsWith(startString), containsString(endString)));
+      //모두있는지 없는지를 확인. suchan /
+
     }
 
     //부동소수점 범위 closeTo 테스트
