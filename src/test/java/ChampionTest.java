@@ -1,3 +1,4 @@
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -17,11 +18,11 @@ public class ChampionTest {
     public void setUp() {
 
         //5개의 챔피언 객체를 만듭니다.
-        Champion topChamp = new Champion("다리우스", "탑");
-        Champion jungleChamp = new Champion("리신", "정글");
-        Champion midChamp = new Champion("르블랑", "미드");
-        Champion adcChamp = new Champion("베인", "바텀");
-        Champion supportChamp = new Champion("레오나", "바텀");
+        Champion topChamp = new Champion("문도", "탑");
+        Champion jungleChamp = new Champion("렝가", "정글");
+        Champion midChamp = new Champion("제이스", "미드");
+        Champion adcChamp = new Champion("이즈리얼", "바텀");
+        Champion supportChamp = new Champion("잔나", "바텀");
 
         //앞서 만든 List 에 각 챔피언을 추가합니다.
         championList.add(topChamp);
@@ -42,7 +43,8 @@ public class ChampionTest {
     @Test
     public void notNullCheck() {
         String lck = "LCK";
-        //assertThat(lck, notNullValue());
+        assertThat(lck , notNullValue());
+        //suchan
     }
 
     //nullValue 활용한 테스트
@@ -52,16 +54,15 @@ public class ChampionTest {
         //assertThat(lck, nullValue());
     }
 
-    //문자열 관련 테스트 anyOf, containsString, endWith
+    //문자열 관련 테스트 allOf, containsString, endWith
     @Test
     public void testForRelatedString() {
-        String sampleString1 = "Player Focus";
-        String sampleString2 = "Player point";
+        String sampleString1 = "Player suchan";
         String startString = "Player";
-        String endString = "point";
-//        assertThat(sampleString1,is(startWith("Player")));
-//        assertThat(sampleString1, anyOf(startsWith(startString), containsString(endString))); //있는지 없는지를 확인. /
-//        assertThat(sampleString2, is(endsWith(endString)));
+        String endString = "suchan";
+      assertThat(sampleString1, allOf(startsWith(startString), containsString(endString)));
+      //모두있는지 없는지를 확인. suchan /
+
     }
 
     //부동소수점 범위 closeTo 테스트
@@ -70,11 +71,10 @@ public class ChampionTest {
 //        assertThat(3.14, closeTo(3, 0.2)); // 값을 주고, 기본 3에 0.2안에 들어오면 true
     }
 
-    //anything 테스트
+    //anything 테스트 suchan
     @Test
     public void shouldNotErrorGetReference() {
-//        assertThat(championList.get(2), anything()); // 값만 가져올 수 있으면 true
-//        assertThat(championList.get(2), is());
+        assertThat(championList.get(3),anything());
     }
 
     //객체 크기 검증 테스트 hasSize
@@ -85,14 +85,11 @@ public class ChampionTest {
         assertThat(championList, hasSize(5)); //size가 5인지
     }
 
-    //서폿 챔피언은 타릭이어야 한다라는 조건으로 테스트 코드 작성
+    //미드 챔피언은 카사딘이어야 한다라는 조건으로 테스트 코드 작성 suchan
     @Test
-    public void shouldSupportChampionIsTaric() {
-        Champion supportChamp = new Champion("타릭", "바텀");
-
-//        assertThat("타릭", is(supportChamp.getName()));
-//        assertThat("타릭", is(equalTo(supportChamp.getName())));
-//        assertThat("타릭", equalTo(supportChamp.getName()));
+    public void shouldMidChampionIskasadin() {
+        Champion supportChamp = new Champion("카사딘", "미드");
+        assertThat("카사딘",is(equalTo(supportChamp.getName())));
     }
 
     //hasProperty 활용하여 속성이 포함되어 있는지 테스트
@@ -105,11 +102,11 @@ public class ChampionTest {
 
     }
 
-    //hasToString 활용 테스트
+    //hasToString 활용 테스트 suchan
     @Test
     public void shouldHaveSomeChampName() {
-        List<String> champListNames = Arrays.asList("루시안", "애쉬", "렉사이", "갈리오", "모르가느", "블라디미르");
-//        assertThat(champListNames.get(0), hasToString("루시안"));//해당 문자열을 가지고 있는지
+        List<String> iLikechampListNames = Arrays.asList("카밀", "카사딘", "룰루", "질리언", "이즈리얼", "블라디미르");
+        assertThat(iLikechampListNames.get(4),hasToString("이즈리얼"));
     }
 
     //property와 value가 같은지 테스트
@@ -123,16 +120,16 @@ public class ChampionTest {
     }
 
 
-    //탑 챔피언은 다리우스여야 한다라는 조건으로 테스트 코드 작성, stream 활용예
+    //미드 챔피언은 제이스여야 한다라는 조건으로 테스트 코드 작성, stream  suchan
     @Test
-    public void shouldTopChampionIsDarius() {
+    public void shouldMidChampionIsJayce() {
         Optional<Champion> filterdChampion = championList.stream()
-                .filter(c -> c.getPosition().equals("탑"))
+                .filter(c->c.getPosition().equals("미드"))
                 .findFirst();
-//        String champName = filterdChampion.get().getName();
-//        assertTrue(champName.equals("다리우스"));
-//        assertThat("다리우스", is(champName));
-        System.out.println("Result::"+filterdChampion);
+        String champName = filterdChampion.get().getName();
+        System.out.println("result :: " + filterdChampion);
+        Assert.assertTrue(champName.equals("제이스"));
+        assertThat("제이스",is(champName));
 
     }
 
