@@ -53,7 +53,7 @@ public class ChampionTest {
         //assertThat(lck, nullValue());
     }
 
-    //문자열 관련 테스트 anyOf, containsString, endWith
+    //문자열 관련 테스트 allOf, containsString, endWith
     @Test
     public void testForRelatedString() {
         String sampleString1 = "Player suchan";
@@ -73,8 +73,7 @@ public class ChampionTest {
     //anything 테스트
     @Test
     public void shouldNotErrorGetReference() {
-//        assertThat(championList.get(2), anything()); // 값만 가져올 수 있으면 true
-//        assertThat(championList.get(2), is());
+        assertThat(championList.get(3),anything());
     }
 
     //객체 크기 검증 테스트 hasSize
