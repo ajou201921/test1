@@ -7,6 +7,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
+import static junit.framework.TestCase.assertFalse;
 import static junit.framework.TestCase.assertTrue;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
@@ -36,7 +37,7 @@ public class ChampionTest {
     @Test
     public void givenCollectionWhenEmptyCorrect() {
         List<String> emptyList = new ArrayList<>();
-        //assertThat(emptyList, empty());
+        assertThat(emptyList, empty());
     }
 
     //notNullValue 활용한 테스트
@@ -51,7 +52,7 @@ public class ChampionTest {
     @Test
     public void givenStringWhenNullIsCorrect() {
         String lck = null;
-        //assertThat(lck, nullValue());
+        assertTrue(lck == null);
     }
 
     //문자열 관련 테스트 allOf, containsString, endWith
@@ -68,7 +69,7 @@ public class ChampionTest {
     //부동소수점 범위 closeTo 테스트
     @Test
     public void testForFloatingPoint() {
-//        assertThat(3.14, closeTo(3, 0.2)); // 값을 주고, 기본 3에 0.2안에 들어오면 true
+        assertThat(3.1415926535, closeTo(3, 0.15));
     }
 
     //anything 테스트 suchan
@@ -80,9 +81,8 @@ public class ChampionTest {
     //객체 크기 검증 테스트 hasSize
     @Test
     public void shouldChampionCountFive() {
-        assertTrue(championList.size() == 5);
-//        assertThat(championList.size(), is(5));
-        assertThat(championList, hasSize(5)); //size가 5인지
+        assertFalse(championList.size() == 4); // 제발 탈주하지 말아주세요 ㅠㅠ
+        assertThat(championList.size(), is(5)); // 5명이서 하는 게임이잖아요.
     }
 
     //미드 챔피언은 카사딘이어야 한다라는 조건으로 테스트 코드 작성 suchan
@@ -95,10 +95,10 @@ public class ChampionTest {
     //hasProperty 활용하여 속성이 포함되어 있는지 테스트
     @Test
     public void shouldHasPropertyPosition() {
-//        assertThat(championList.get(0), hasProperty("position"));
-//        assertThat(championList.get(0), hasProperty("name"));
-//        assertThat(championList.get(0), hasProperty("position", equalTo("탑")));
-//        assertThat(championList.get(3), hasProperty("position", equalTo("르블랑")));
+        assertThat(championList.get(0), hasProperty("position"));
+        assertThat(championList.get(0), hasProperty("name"));
+        assertThat(championList.get(2), hasProperty("position", equalTo("미드")));
+        assertThat(championList.get(4), hasProperty("name", equalTo("잔나")));
 
     }
 
@@ -112,11 +112,9 @@ public class ChampionTest {
     //property와 value가 같은지 테스트
     @Test
     public void shouldHaveSamePropertyAndValue() {
-        List<String> championNames1 = Arrays.asList("루시안", "애쉬", "렉사이", "갈리오", "모르가나", "블라디미르");
-        List<String> championNames2 = Arrays.asList("조이", "애쉬", "렉사이", "갈리오", "모르가나", "블라디미르");
-        assertThat(championNames1,samePropertyValuesAs(championNames2));
-//        assertThat(championNames1, samePropertyValuesAs(championNames2));
-//        assertThat(championNames2,hasToString("조이"));
+        List<String> championNames1 = Arrays.asList("다리우스", "스웨인", "카타리나", "드레이븐");
+        List<String> championNames2 = Arrays.asList("가렌", "베인", "피오라", "케일"); //귀족 트리
+        assertThat(championNames1, samePropertyValuesAs(championNames2));
     }
 
 
