@@ -6,6 +6,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
+import static junit.framework.TestCase.assertFalse;
 import static junit.framework.TestCase.assertTrue;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
@@ -80,9 +81,8 @@ public class ChampionTest {
     //객체 크기 검증 테스트 hasSize
     @Test
     public void shouldChampionCountFive() {
-        assertTrue(championList.size() == 5);
-//        assertThat(championList.size(), is(5));
-        assertThat(championList, hasSize(5)); //size가 5인지
+        assertFalse(championList.size() == 4); // 제발 탈주하지 말아주세요 ㅠㅠ
+        assertThat(championList.size(), is(5)); // 5명이서 하는 게임이잖아요.
     }
 
     //서폿 챔피언은 타릭이어야 한다라는 조건으로 테스트 코드 작성
