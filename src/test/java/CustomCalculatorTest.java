@@ -39,6 +39,10 @@ public class CustomCalculatorTest {
     public void multiply() {
         customCalculator = new CustomCalculator();
         int result = customCalculator.multiply(5,9);
+        //assertThat(result,is(3)); //틀렷다고 나옴 답은 45이기 때문임.
+        //assertThat(result,is(45)); // 답이 45이기 때문에 맞은것,
+        assertTrue(result==45); // 답이 45이기때문에 true임.
+        //assertFalse(result==45); // 답이 45이라서 오류가 뜸 조건이 false가 되어야함.
         /* 이곳에 테스트 코드를 작성하세요. */
         System.out.println("result :: " + result);
     }
