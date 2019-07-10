@@ -17,7 +17,10 @@ public class CustomCalculatorTest {
         //assertThat(result,is(5)); //틀렷다고 나옴 답은 25이기 때문임.
         //assertThat(result,is(25)); // 답이 25이기 때문에 맞은것,
         assertTrue(result==25); // 답이 25이기때문에 true임.
+
         /* 이곳에 테스트 코드를 작성하세요. */
+        //assertTrue(result == 5);
+        //assertThat(result,is(5));
         System.out.println("result :: " + result);
     }
 
@@ -31,6 +34,8 @@ public class CustomCalculatorTest {
         assertTrue(result==13); // 답이 13이기때문에 true임.
         //assertFalse(result==13); // 답이 13이라서 오류가 뜸 조건이 false가 되어야함.
         /* 이곳에 테스트 코드를 작성하세요. */
+        //assertTrue(result == 13);
+        //assertThat(result,is(5));
         System.out.println("result :: " + result);
     }
 
@@ -44,6 +49,8 @@ public class CustomCalculatorTest {
         assertTrue(result==45); // 답이 45이기때문에 true임.
         //assertFalse(result==45); // 답이 45이라서 오류가 뜸 조건이 false가 되어야함.
         /* 이곳에 테스트 코드를 작성하세요. */
+        //assertTrue(result == 45);
+        //assertThat(result,is(45));
         System.out.println("result :: " + result);
     }
 
@@ -57,6 +64,8 @@ public class CustomCalculatorTest {
         assertTrue(result==5); // 답이 5이기때문에 true임.
         //assertFalse(result==5); // 답이 5이라서 오류가 뜸 조건이 false가 되어야함.
         /* 이곳에 테스트 코드를 작성하세요. */
+        assertTrue(result==5);
+        //assertThat(result,is(5));
         System.out.println("result :: " + result);
     }
 }
