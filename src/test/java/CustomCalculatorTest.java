@@ -14,6 +14,9 @@ public class CustomCalculatorTest {
     public void add() {
         customCalculator = new CustomCalculator();
         int result = customCalculator.add(10,15);
+        //assertThat(result,is(5)); //틀렷다고 나옴 답은 25이기 때문임.
+        //assertThat(result,is(25)); // 답이 25이기 때문에 맞은것,
+        assertTrue(result==25); // 답이 25이기때문에 true임.
         /* 이곳에 테스트 코드를 작성하세요. */
         System.out.println("result :: " + result);
     }
