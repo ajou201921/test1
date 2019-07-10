@@ -1,3 +1,4 @@
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -101,7 +102,7 @@ public class ChampionTest {
 
     }
 
-    //hasToString 활용 테스트 suchan 
+    //hasToString 활용 테스트 suchan
     @Test
     public void shouldHaveSomeChampName() {
         List<String> iLikechampListNames = Arrays.asList("카밀", "카사딘", "룰루", "질리언", "이즈리얼", "블라디미르");
@@ -119,16 +120,16 @@ public class ChampionTest {
     }
 
 
-    //탑 챔피언은 다리우스여야 한다라는 조건으로 테스트 코드 작성, stream 활용예
+    //미드 챔피언은 제이스여야 한다라는 조건으로 테스트 코드 작성, stream  suchan
     @Test
-    public void shouldTopChampionIsDarius() {
+    public void shouldMidChampionIsJayce() {
         Optional<Champion> filterdChampion = championList.stream()
-                .filter(c -> c.getPosition().equals("탑"))
+                .filter(c->c.getPosition().equals("미드"))
                 .findFirst();
-//        String champName = filterdChampion.get().getName();
-//        assertTrue(champName.equals("다리우스"));
-//        assertThat("다리우스", is(champName));
-        System.out.println("Result::"+filterdChampion);
+        String champName = filterdChampion.get().getName();
+        System.out.println("result :: " + filterdChampion);
+        Assert.assertTrue(champName.equals("제이스"));
+        assertThat("제이스",is(champName));
 
     }
 
