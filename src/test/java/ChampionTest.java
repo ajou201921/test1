@@ -49,7 +49,7 @@ public class ChampionTest {
     @Test
     public void givenStringWhenNullIsCorrect() {
         String lck = null;
-        //assertThat(lck, nullValue());
+        assertTrue(lck == null);
     }
 
     //문자열 관련 테스트 anyOf, containsString, endWith
