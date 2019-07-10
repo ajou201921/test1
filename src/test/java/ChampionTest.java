@@ -101,11 +101,11 @@ public class ChampionTest {
 
     }
 
-    //hasToString 활용 테스트
+    //hasToString 활용 테스트 suchan 
     @Test
     public void shouldHaveSomeChampName() {
-        List<String> champListNames = Arrays.asList("루시안", "애쉬", "렉사이", "갈리오", "모르가느", "블라디미르");
-//        assertThat(champListNames.get(0), hasToString("루시안"));//해당 문자열을 가지고 있는지
+        List<String> iLikechampListNames = Arrays.asList("카밀", "카사딘", "룰루", "질리언", "이즈리얼", "블라디미르");
+        assertThat(iLikechampListNames.get(4),hasToString("이즈리얼"));
     }
 
     //property와 value가 같은지 테스트
