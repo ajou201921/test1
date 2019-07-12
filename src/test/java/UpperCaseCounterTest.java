@@ -11,21 +11,21 @@ public class UpperCaseCounterTest {
 
     private UpperCaseCounter upperCaseCounter = new UpperCaseCounter();
 
-    @Test //new Method (1)
+    @Test //new Method (1) 황수진
     public void given2Strings_whenEqual_thenCorrect() {
         String a = "foo";
         String b = "FOO";
         assertThat(a, equalToIgnoringCase(b));
     }
 
-    @Test //new Method (2)
+    @Test //new Method (2) 황수진
     public void given2Strings() {
         String a = "foo";
         String b = "FOO";
         assertThat(a,is(b));
     }
 
-    @Test //new Method(3)
+    @Test //new Method(3) 황수진
     public void getNumberOfLowerCaseCharacterInString_return_4(){
         String str1 = "ABCdefGHI";
         String str2 = "ABCDEFGHIJ";
@@ -40,7 +40,7 @@ public class UpperCaseCounterTest {
 
     }
 
-    @Test//new Method(4)
+    @Test//new Method(4) 황수진
     public void givenArray_allLowerCase_result_0() {
         int result=0;
         String[] array = {"One", "Two","THREE"};
@@ -53,14 +53,10 @@ public class UpperCaseCounterTest {
         System.out.println("result :: " + result);
     }
 
-    @Test(expected = ArithmeticException.class) //new Method(5)
+    @Test(expected = ArithmeticException.class) //new Method(5) 황수진
     public void shouldThrowExceptionWhenGetZero() {
         new Integer(4/0);
     }
-
-
-
-
 
     @Test
     public void getNumberOfUpperCaseCharactersInString_return_0_for_null_input(){
