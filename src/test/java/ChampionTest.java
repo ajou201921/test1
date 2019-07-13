@@ -40,12 +40,12 @@ public class ChampionTest {
         assertThat(emptyList, empty());
     }
 
-    //notNullValue 활용한 테스트
+    //notNullValue 활용한 테스트 한수찬
     @Test
     public void notNullCheck() {
         String lck = "LCK";
         assertThat(lck , notNullValue());
-        //suchan
+
     }
 
     //nullValue 활용한 테스트
@@ -55,14 +55,14 @@ public class ChampionTest {
         assertTrue(lck == null);
     }
 
-    //문자열 관련 테스트 allOf, containsString, endWith
+    //문자열 관련 테스트 allOf, containsString, endWith 한수찬
     @Test
     public void testForRelatedString() {
         String sampleString1 = "Player suchan";
         String startString = "Player";
         String endString = "suchan";
       assertThat(sampleString1, allOf(startsWith(startString), containsString(endString)));
-      //모두있는지 없는지를 확인. suchan /
+      //모두있는지 없는지를 확인.
 
     }
 
@@ -72,7 +72,7 @@ public class ChampionTest {
         assertThat(3.1415926535, closeTo(3, 0.15));
     }
 
-    //anything 테스트 suchan
+    //anything 테스트 한수찬
     @Test
     public void shouldNotErrorGetReference() {
         assertThat(championList.get(3),anything());
@@ -85,7 +85,7 @@ public class ChampionTest {
         assertThat(championList.size(), is(5)); // 5명이서 하는 게임이잖아요.
     }
 
-    //미드 챔피언은 카사딘이어야 한다라는 조건으로 테스트 코드 작성 suchan
+    //미드 챔피언은 카사딘이어야 한다라는 조건으로 테스트 코드 작성 한수찬
     @Test
     public void shouldMidChampionIskasadin() {
         Champion supportChamp = new Champion("카사딘", "미드");
@@ -102,7 +102,7 @@ public class ChampionTest {
 
     }
 
-    //hasToString 활용 테스트 suchan
+    //hasToString 활용 테스트 한수찬
     @Test
     public void shouldHaveSomeChampName() {
         List<String> iLikechampListNames = Arrays.asList("카밀", "카사딘", "룰루", "질리언", "이즈리얼", "블라디미르");
@@ -118,7 +118,7 @@ public class ChampionTest {
     }
 
 
-    //미드 챔피언은 제이스여야 한다라는 조건으로 테스트 코드 작성, stream  suchan
+    //미드 챔피언은 제이스여야 한다라는 조건으로 테스트 코드 작성, stream 한수찬
     @Test
     public void shouldMidChampionIsJayce() {
         Optional<Champion> filterdChampion = championList.stream()
@@ -129,6 +129,12 @@ public class ChampionTest {
         Assert.assertTrue(champName.equals("제이스"));
         assertThat("제이스",is(champName));
 
+    }
+    @Test // 공백제거시 같은지 비교 test by 한수찬
+    public void shouldequalToIgonoringWhiteSpace(){
+        String s1="소환사의 협곡";
+        String s2="소환사의 협곡 ";
+        assertThat(s1,equalToIgnoringWhiteSpace(s2));
     }
 
 }
